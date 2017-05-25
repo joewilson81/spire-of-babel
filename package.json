@@ -31,10 +31,13 @@
   "devDependencies": {
     "babel-preset-env": "^1.5.1",
     "babel-preset-stage-2": "^6.24.1",
+    "bundle-collapser": "1.2.1",
     "codecov": "^2.2.0",
     "doxdox": "^2.0.2",
+    "envify": "4.0.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "uglifyify": "3.0.4"
   },
   "scripts": {
     "test": "npm run lint && mocha test/specs/ && npm run test:docs",
