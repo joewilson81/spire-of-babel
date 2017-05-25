@@ -105,6 +105,7 @@ const options = {
     'minify': args.flags['--minify'] || args.flags['-m'] || false,
     'output': args.flags['--output'] || args.flags['-o'] || null,
     'presets': args.flags['--presets'] || args.flags['-p'] || 'es2015',
+    'production': args.flags['--production'] || args.flags['-prod'] || false,
     'sourcemap': args.flags['--sourcemap'] || args.flags['-s'] || false,
     'watch': args.flags['--watch'] || args.flags['-w'] || null
 };
@@ -121,16 +122,17 @@ ${chalk.blue(' Usage:')} spire-of-babel <path> [options]
 
  Options:
 
-${chalk.yellow('  -h, --help')}         Display this help message.
-${chalk.yellow('  -v, --version')}      Display the current installed version.
-${chalk.yellow('  -b, --bundle')}       Use browserify bundler.
-${chalk.yellow('  -d, --dir')}          Directory to run linter on.
-${chalk.yellow('  -l, --lint')}         Lint files before transpiling.
-${chalk.yellow('  -m, --minify')}       Minify output.
-${chalk.yellow('  -o, --output')}       Path to save transformed file to. Defaults to stdout.
-${chalk.yellow('  -p, --presets')}      Load custom presets (es2015, es2016, es2017, latest). Defaults to es2015. Comma delimited value.
-${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.
-${chalk.yellow('  -w, --watch')}        File path to watch for changes. Example: ./test/**/*.jsx
+${chalk.yellow('  -h, --help')}          Display this help message.
+${chalk.yellow('  -v, --version')}       Display the current installed version.
+${chalk.yellow('  -b, --bundle')}        Use browserify bundler.
+${chalk.yellow('  -d, --dir')}           Directory to run linter on.
+${chalk.yellow('  -l, --lint')}          Lint files before transpiling.
+${chalk.yellow('  -m, --minify')}        Minify output.
+${chalk.yellow('  -o, --output')}        Path to save transformed file to. Defaults to stdout.
+${chalk.yellow('  -p, --presets')}       Load custom presets (es2015, es2016, es2017, latest). Defaults to es2015. Comma delimited value.
+${chalk.yellow('  -prod, --production')} Production build of React
+${chalk.yellow('  -s, --sourcemap')}     Generate sourcemap.
+${chalk.yellow('  -w, --watch')}         File path to watch for changes. Example: ./test/**/*.jsx
 
 `);
     process.exit();
